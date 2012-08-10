@@ -1,0 +1,12 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{if flash.error}
+<h1>${flash.error}</h1>
+#{/if}
+ 
+<form action="@{Application.authenticate()}" method="POST">
+    <label for="user">What's your OpenID?</label>
+    <input size="100" type="text" name="user" id="user" value="https://www.google.com/accounts/o8/id" />
+    <input type="submit" value="login..." />
+</form>
